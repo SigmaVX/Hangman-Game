@@ -11,13 +11,15 @@ var rightLetters = [ ];
 
 // Total Wins
  var winsHTML = document.getElementById("wins");
+ var wins = 0;
 
  // Total Losses
  var lossesHTML = document.getElementById("losses");
-
+ var losses = 0;
 
  // Guesses Remaining On Current Game
  var guessesRemainingHTML = document.getElementById("guesses");
+ var guesses = 0;
 
  // Wrong Letters Guessed On Current Game
  var wrongLettersHTML = document.getElementById("wrongLetters");
@@ -34,18 +36,30 @@ var getStartedHTML = document.getElementById("startMessage");
  //  System Message
  var messageHTML = document.getElementById("message"); 
 
+var maskString = "";
 
+var wrongString = "";
+
+var rightString = "";
 
 
 //Start The Game
 function startGame(){    
-     
+    // Guesses and Arrays Reset
+    guesses = 10;
+    rightLetters = [];
+    wrongLetters = [];
+    guessesRemainingHTML.textContent = guesses;
+    wrongString = wrongLetters.join("");
+    wrongLettersHTML.textContent = wrongString; 
+
     // Computer Randomly Picks Word
     var wordPick = movies[Math.floor(Math.random() * 100)];
     console.log(wordPick);
 
     // Add The Word To HTML 
     wordHTML.textContent = wordPick;
+    wordHTML.style.visibility = "hidden";
 
     // Masks The Word On Page Using An Empty Array 
     var mask = [];
@@ -54,9 +68,11 @@ function startGame(){
         if (wordPick.charAt(i) === " "){
         mask[i] = wordPick.charAt(i);
         }
+
         else {
         mask[i] = "_";
         }
+
         // Puts Masked Array Into A String On HTML
         var maskString = mask.join("");
         maskedHTML.textContent = maskString;    
@@ -67,9 +83,15 @@ function startGame(){
         var guess = event.key.toUpperCase();
         console.log(guess);
         
-        // Check If Letter Has Already Been Used
-        if (rightLetters.indexOf(guess) === -1 || wrongLetters.indexOf(guess) === -1){
-
+        // Converts Arrays To Sring To Search If Letter Was Already Guessed 
+        rightString = rightLetters.join("");
+        wrongString = wrongLetters.join("");
+        if(rightString.includes(guess) === true || wrongString.includes(guess) === true){
+            alert("What's Up?  You Already Tried This Letter.");
+        }
+        
+        else {
+            
             // Loop Checking User's Guess
             for (var i=0; i < wordPick.length; i++){
                 
@@ -79,7 +101,7 @@ function startGame(){
                     mask[i] = guess;
 
                     // Puts Masked Array Into A String On HTML
-                    var maskString = mask.join("");
+                    maskString = mask.join("");
                     maskedHTML.textContent = maskString;
                     
                     // Checks If Right Is Already In Array & Stores It 
@@ -88,42 +110,79 @@ function startGame(){
                         console.log(rightLetters);
                     }
                     else {    
-                    // Do Nothing
+                    // Do Nothing & Alert
+                    console.log("correct letter already added to array");
                     }
                 }
-                // Code If Wrong
                 else {
-                    // Checks If Wrong Is Already In Array & Stores It
-                    if (wrongLetters.indexOf(guess) === -1){
+                    // Do Nothing
+                    console.log("nothing to do for this part of the loop");
+                }   
+            }
+        }
+            // Code If Wrong
+            if (!maskString.includes(guess)) {
+                if (wrongLetters.indexOf(guess) === -1){
                     wrongLetters.push(guess);
+                    console.log("wrong letter");
                     console.log(wrongLetters);
+                    guesses--;
+                    console.log(guesses);
+                    guessesRemainingHTML.textContent = guesses;
 
                     // Puts Wrong Letters Into Array & A String On HTML
-                    var wrongString = wrongLetters.join("");
+                    wrongString = wrongLetters.join("");
                     wrongLettersHTML.textContent = wrongString;
+                    // guessesLeft--;
                     }
-                    
-                    else {
-                    // Do Nothing
-                    }
-                } 
+    
+                else {
+                // Do Nothing
+                console.log("already guessed incorrect letter");
+                }
+                }
+            else {
+                // Do Nothing
+                console.log("do nothing here");
+            } 
+            
+            // Code If Win | Finished The Word
+            if (maskString === wordPick){
+                wordHTML.style.visibility = "visible";
+                alert("winner winner chicken dinner. Shall We Play Again?");
+                wins++;
+                winsHTML.textContent = wins;
+                startGame();
             }
-        }    
-        else {
-            alert("You Already Tried This.");
+            else{
+                // Do Nothing
+            }    
+
+
+            // Game Over Code | If Out Of Guesses
+            if (guesses === 0){
+                wordHTML.style.visibility = "visible";
+                alert("I get knocked down but I get up again.  Shale We Play Again?");
+                losses++;
+                lossesHTML.textContent = losses;
+                startGame();
+            }
+            else{
+                // Do Nothing
+            }
+
+
+
         } 
-    }    
 }
 
 
 // if wrong - show mistake, show letter guessed, decrement the words left coutner
 // if word counter runs out game is over and increment losses
-    wordHTML.style.visibility = "visible";
-    getStartedHTML.style.visibility = "hidden";
+
 
 // if guess all letters, run annimation, and increment wins
-    wordHTML.style.visibility = "visible";
-    getStartedHTML.style.visibility = "hidden";
+
 
 // ask to restart game with button
 

@@ -4,43 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hangman</title>
+    <title>Let's Play Hangman</title>
 
   <!-- Bootsrap CSS CDN Link -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  
+
+
   <!-- CSS Files -->
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 
 <body>
-    <!-- header section with game name -->
-    <h1>What Up?</h1>
-    <p>Instructions</p>
 
-    <!-- Our Word -->
-    <div id="word">Can You Guess The Movie?</div>
-    <div id="startMessage" class="invisible">Get to Guessing</div>
-    <div id="maskedWord">mask</div>
-    <div id="message">message</div>
-    <br>
+   <!-- Metrics Section -->
+   <div class="container-fluid metrics">
+        <div class="row pt-3 pb-3">
+
+            <div id="instructions" class="metric col-md-3 col-xs-6 text-center">
+                <h3>Instructions</h3>
+                <a href="#" data-toggle="popover" title="How To Play" data-content="Enter any letter or number on your keyboard to gradually reveal one of the top 100 grossing movies of all time (as of 2017). Turn your sound on for some extra movie inspired encouragement.">Click Here</a>
+            </div>
+        
+            <div class="metric col-md-3 col-xs-6 text-center">
+                <h3>Wins</h3>
+                <div id="wins">0</div>
+            </div>
+            
+            <div class="metric col-md-3 col-xs-6 text-center">
+                <h3>Losses</h3>
+                <div id="losses">0</div>
+            </div>
+            
+            <div class="metric col-md-3 col-xs-6 text-center">
+                <h3>Guesses</h3>
+                <div id="guesses">Remaining</div>
+            </div>
+
+        </div>
+    </div>
+
+<div class="background">
+
+    <!-- Our Hidden Word Section -->
+    <div class="container bigbox">
+        <div class="row jumbotron">
+            <div class="col-sm-12 text-center">
+                <h2 id="message" class="pt-0 pb-2">Shall We Play A Game?</h2>
+                <h2 class="text-center pb-2">
+                    <div id="word">Guess The Movie Title</div>
+                </h2>
+                <div id="maskedWord" class="pb-2"></div>
+                <h3><div id="wrongLetters"></div></h3>
+            </div>
+        </div>
+    </div>
+      
+    <!-- Wrong Letters Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center mb-4">
+                <button id="startbtn" class="btn btn-lg " onclick="startGame()">
+                    Fire It Up | Start My Game
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio Files -->
+    <audio id="my_audio" src="./assets/sound/Play a game.mp3"></audio> 
+
+</div>
+ 
+    <!--Footer Section-->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 pt-4 pb-3 text-center">
+                    <p>© Copyright 2018 Tony Wible</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-    <!-- score area - keeps track of wins losses -->
-    <div id="wins">wins</div>
-    <div id="losses">losses</div>
-
-    <!-- current game data section - show guesses, words, tries left -->
-    <div id="wrongLetters">Wrong Letters</div>
-    <div id="guesses">Guesses Remaining</div>
-
-    <button class="btn" onclick="startGame()">Click me</button>
-
-    <!-- Bootstrap JS CDN -->
+    <!-- Bootstrap CDN & JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
-    <script src="./assets/javascript/gamealt.js"></script>
+    <script src="./assets/javascript/game.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();   
+        });
+    </script>    
+
 </body>
 </html>

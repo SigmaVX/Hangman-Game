@@ -1,7 +1,51 @@
+
+
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    border-top: 3px solid #5e3bdd;
+}
+
+.background {
+    background-color: burlywood;
+    background-image: url("../images/carbon.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height:100vh;
+    min-height:100vh;
+}
+
+.btn {
+    border: 2px solid lightgrey;
+    background-color: #5e3bdd;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.bigbox{
+    padding-top: 10%;
+}
+
+
+.metrics{
+    border-bottom: 3px solid #5e3bdd;
+}
+
+#message, #word {
+    text-transform: capitalize;
+}
+
 #maskedWord {
-    font-size: 25px;
+    font-size: 40px;
+    font-family: fantasy;
     letter-spacing: 10px;
 }
-body {
-    padding: 20px;
+
+
+@media screen and (max-width: 640px) {
+    .background {       
+        background-image: url("../images/deadpool-mobile.jpg");
+
+    }
+
 }

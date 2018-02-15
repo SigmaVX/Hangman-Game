@@ -6,38 +6,55 @@ footer {
 }
 
 .btn {
-    border: 2px solid lightgrey;
-    background-color: #5e3bdd;
-    color: #ffffff;
+    border: 2px solid black;
+    background-color: gold;
+    color: black;
     font-weight: 500;
+    width: 33%;
+    height: 50px;
+    border-radius: 15px;
+    text-transform: capitalize;
+    font-size: 20px;
 }
 
 .btn:hover {
-    border: 2px solid white;
-    background-color: gold;
-    color: black;
+    border: 2px solid #333333;
+    background-color:#5e3bdd;
+    color: white;
     font-weight: 600;
 }
 
 .bigbox{
-    padding-top: 8%;
+    padding-top: 15%;
 }
 
 .metrics{
     border-bottom: 3px solid #5e3bdd;
 }
 
+.jumbotron {
+    opacity: .7;
+    border-radius: 15px;
+    padding: 20px;
+}
+
 #background {
     background-color: #222222;
-    background-image: url("../images/bttf2.jpg");
+    background-image: url("../images/circuit2.jpeg");
     background-repeat: no-repeat;
     background-size: 100%;
-    height:100vh;
+    /* height:100vh; */
     min-height:100vh;
 }
 
-#message, #word {
+#message {
+    text-transform: uppercase;
+    color: #5e3bdd;
+}
+
+#word {
     text-transform: capitalize;
+    color: #333333;
 }
 
 #maskedWord {
@@ -46,19 +63,16 @@ footer {
     letter-spacing: 10px;
 }
 
-.jumbotron {
-    opacity: .7;
-    border-radius: 15px;
-}
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 900px) {
    
     .bigbox{
         padding-top: 20%;
     }
 
     #background {       
-        background-image: url("../images/deadpool-mobile.jpg");
+        background-image: url("#");
 
     }
 

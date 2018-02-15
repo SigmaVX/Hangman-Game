@@ -147,30 +147,22 @@ var randomJeerSound = function  () {
                 sound.setAttribute("src", "./assets/sound/jeers/iqs.mp3");
                 break;
             case 9:
-                sound.setAttribute("src", "./assets/sound/jheers/Mmkay.mp3");
+                sound.setAttribute("src", "./assets/sound/jeers/Mmkay.mp3");
                 break;
             case 10:
-                sound.setAttribute("src", "../sound/jeers/zero.mp3");
+                sound.setAttribute("src", "./assets/sound/jeers/zero.mp3");
                 break;
             case 11:
                 sound.setAttribute("src", "./assets/sound/jeers/MvFly Laugh.mp3");
                 break;
             case 12:
-                sound.setAttribute("src", "./assets/sound/jheers/thinkmcfly.mp3");
+                sound.setAttribute("src", "./assets/sound/jeers/thinkmcfly.mp3");
                 break;
             case 13:
-                sound.setAttribute("src", "../sound/jeers/Ever.mp3");
+                sound.setAttribute("src", "./assets/sound/jeers/Ever.mp3");
                 break;    
             
         }
-
-
-
-
-
-
-
-
         sound.play();
     }
 }
@@ -180,7 +172,7 @@ var randomJeerSound = function  () {
 //Function For Starting The Game
 function startGame(){    
     // Reset Guesses and Arrays Reset
-    guesses = 3;
+    guesses = 10;
     rightLetters = [];
     wrongLetters = [];
     correctCount = 0;
@@ -189,7 +181,7 @@ function startGame(){
     wrongLettersHTML.textContent = wrongString;
     startButton.style.visibility = "hidden"; 
     messageHTML.textContent = "This Is A Top 100 Movie.  EZ PZ Right?";
-    image.style.backgroundImage = "url('./assets/images/bttf2.jpg')";
+    image.style.backgroundImage = "url('./assets/images/circuit2.jpeg')";
 
     // Computer Randomly Picks Word
     var wordPick = movies[Math.floor(Math.random() * 100)];
@@ -309,7 +301,7 @@ function startGame(){
             winsHTML.textContent = wins;
             sound.pause();
             document.getElementById("winSound").play(); 
-            image.style.backgroundImage = "url('./assets/images/tron.jpg')";
+            image.style.backgroundImage = "url('./assets/images/starwars.jpg')";
         }
         else{
             // Do Nothing
@@ -326,7 +318,7 @@ function startGame(){
             sound.pause();
             document.getElementById("lostSound").play();
             
-            image.style.backgroundImage = "url('./assets/images/tron2.jpg')";
+            image.style.backgroundImage = "url('./assets/images/spring.jpg')";
 
         }
         else{

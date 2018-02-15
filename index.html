@@ -48,30 +48,38 @@
 
 <div id="background">
 
+    <!-- Button Section
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center mt-5 mb-3">
+                <button id="startbtn" class="btn btn-block " onclick="startGame()">
+                    Start My Game
+                </button>
+            </div>
+        </div>
+    </div> -->
+
+
     <!-- Our Hidden Word Section -->
     <div class="container bigbox">
         <div class="row jumbotron">
             <div class="col-sm-12 text-center">
-                <h2 id="message" class="pt-0 pb-2">Shall We Play A Game?</h2>
-                <h2 class="text-center pb-2">
+                <h2 id="message" class="pt-0 pb-1">Shall We Play A Game?</h2>
+                <h2 class="text-center pb-1">
                     <div id="word">Guess The Movie Title</div>
                 </h2>
-                <div id="maskedWord" class="pb-2"></div>
+                <div id="maskedWord" class="pb-1"></div>
                 <h3><div id="wrongLetters"></div></h3>
+                <div class="col-sm-12 text-center">
+                    <button id="startbtn" class="btn" onclick="startGame()">
+                        Fire It Up!
+                    </button>
+                </div>
             </div>
         </div>
     </div>
       
-    <!-- Wrong Letters Section -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center mb-4">
-                <button id="startbtn" class="btn btn-lg " onclick="startGame()">
-                    Fire It Up | Start My Game
-                </button>
-            </div>
-        </div>
-    </div>
+    
     
     <!-- Audio Files -->
     <audio id="audio" src="./assets/sound/Play a game.mp3"></audio>
@@ -80,30 +88,6 @@
     <audio id="winSound" src="./assets/sound/Win.mp3"></audio>
     <audio id="lostSound" src="./assets/sound/Lost.mp3"></audio> 
     
-    <!-- Random Cheer Files -->
-    <!-- <audio class="audio" id="1" src="./assets/sound/cheers/Dont call me Shirley.mp3"></audioc> 
-    <audio class="audio" id="2" src="./assets/sound/cheers/Eat a lot of paint chips.mp3"></audio> 
-    <audio class="audio" id="3" src="./assets/sound/cheers/Ill be watching you.mp3"></audio> 
-    <audio class="audio" id="4" src="./assets/sound/cheers/Im a Dude.mp3"></audio> 
-    <audio class="audio" id="5" src="./assets/sound/cheers/raven.mp3"></audio> 
-    <audio class="audio" id="6" src="./assets/sound/cheers/No one can be told....mp3"></audio> 
-    <audio class="audio" id="7" src="./assets/sound/cheers/Sweet.mp3"></audio> 
-    <audio class="audio" id="8" src="./assets/sound/cheers/Were gonna get our drinks on.mp3"></audio> 
-    <audio class="audio" id="9" src="./assets/sound/cheers/Youre incredible.mp3"></audio> 
-    <audio class="audio" id="10" src="./assets/sound/cheers/youcandoit.mp3"></audio> 
-      -->
-    <!-- Random Jeer Files -->
-    <!-- <audio class="audio" id="11" src="./assets/sound/jeers/gameover.mp3"></audio> 
-    <audio class="audio" id="12" src="./assets/sound/jeers/Bad.mp3"></audio> 
-    <audio class="audio" id="13" src="./assets/sound/jeers/Cougar in the car  Reese Bobby.mp3"></audio> 
-    <audio class="audio" id="14" src="./assets/sound/jeers/zero.mp3"></audio> 
-    <audio class="audio" id="15" src="./assets/sound/jeers/Evil Laugh.mp3"></audio> 
-    <audio class="audio" id="16" src="./assets/sound/jeers/How You Doing There.mp3"></audio> 
-    <audio class="audio" id="17" src="./assets/sound/jeers/Im gonna eat you.mp3"></audio> 
-    <audio class="audio" id="18" src="./assets/sound/jeers/Im gonna need you...Mmkay.mp3"></audio> 
-    <audio class="audio" id="19" src="./assets/sound/jeers/Last time.mp3"></audio> 
-    <audio class="audio" id="20" src="./assets/sound/jeers/thinkmcfly.mp3"></audio>  -->
-
 </div>
  
     <!--Footer Section-->

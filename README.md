@@ -5,7 +5,7 @@ Can you guess one of the top 100 highest grossing movies of all time (through 20
 Note: the sound clips and text is not related to the hidden title!  The WOPR is evil like that.
 
 Key Elements
-- This game uses Bootstrap 4 and is mobile responsive
+- This game uses Bootstrap 4 and is mobile responsive.
 - This game is built using JavaScript to randomize sounds, word choices, and to manipulate the DOM.
-- Functions are used to streamline the code and to scale up the options (e.g. more random cheers and jeers)
+- Functions are used to streamline the code and to scale up the options (e.g. more random cheers and jeers).
 

@@ -4,7 +4,7 @@
 var movies = ["STAR WARS THE FORCE AWAKENS", "AVATAR", "TITANIC", "JURASSIC WORLD", "THE AVENGERS", "STAR WARS THE LAST JEDI", "THE DARK KNIGHT", "ROGUE ONE A STAR WARS STORY", "BEAUTY AND THE BEAST", "FINDING DORY", "STAR WARS EPISODE I  THE PHANTOM MENACE", "STAR WARS", "AVENGERS AGE OF ULTRON", "THE DARK KNIGHT RISES", "SHREK 2", "ET THE EXTRATERRESTRIAL", "THE HUNGER GAMES CATCHING FIRE", "PIRATES OF THE CARIBBEAN DEAD MANS CHEST", "THE LION KING", "TOY STORY 3", "WONDER WOMAN", "IRON MAN 3", "CAPTAIN AMERICA CIVIL WAR", "THE HUNGER GAMES", "SPIDERMAN", "JURASSIC PARK", "TRANSFORMERS REVENGE OF THE FALLEN", "FROZEN", "GUARDIANS OF THE GALAXY VOL 2", "HARRY POTTER AND THE DEATHLY HALLOWS PART 2", "FINDING NEMO", "STAR WARS EPISODE III  REVENGE OF THE SITH", "THE LORD OF THE RINGS THE RETURN OF THE KING", "SPIDERMAN 2", "THE PASSION OF THE CHRIST", "THE SECRET LIFE OF PETS", "DESPICABLE ME 2", "THE JUNGLE BOOK", "DEADPOOL", "INSIDE OUT", "JUMANJI WELCOME TO THE JUNGLE", "FURIOUS 7", "TRANSFORMERS DARK OF THE MOON", "AMERICAN SNIPER", "THE LORD OF THE RINGS THE TWO TOWERS", "ZOOTOPIA", "THE HUNGER GAMES MOCKINGJAY  PART 1", "SPIDERMAN 3", "MINIONS", "SPIDERMAN HOMECOMING", "ALICE IN WONDERLAND", "GUARDIANS OF THE GALAXY", "BATMAN V SUPERMAN DAWN OF JUSTICE", "FORREST GUMP", "IT", "SUICIDE SQUAD", "SHREK THE THIRD", "TRANSFORMERS", "IRON MAN", "HARRY POTTER AND THE SORCERERS STONE", "INDIANA JONES AND THE KINGDOM OF THE CRYSTAL SKULL", "THE LORD OF THE RINGS THE FELLOWSHIP OF THE RING", "THOR RAGNAROK", "IRON MAN 2", "STAR WARS EPISODE II  ATTACK OF THE CLONES", "PIRATES OF THE CARIBBEAN AT WORLDS END", "RETURN OF THE JEDI", "INDEPENDENCE DAY", "PIRATES OF THE CARIBBEAN THE CURSE OF THE BLACK PEARL", "SKYFALL", "THE HOBBIT AN UNEXPECTED JOURNEY", "HARRY POTTER AND THE HALFBLOOD PRINCE", "THE TWILIGHT SAGA ECLIPSE", "THE TWILIGHT SAGA NEW MOON", "HARRY POTTER AND THE DEATHLY HALLOWS PART 1", "THE SIXTH SENSE", "UP", "INCEPTION", "THE TWILIGHT SAGA BREAKING DAWN PART 2", "HARRY POTTER AND THE ORDER OF THE PHOENIX", "THE CHRONICLES OF NARNIA THE LION THE WITCH AND THE WARDROBE", "MAN OF STEEL", "THE EMPIRE STRIKES BACK", "HARRY POTTER AND THE GOBLET OF FIRE", "MONSTERS INC", "HOME ALONE", "THE HUNGER GAMES MOCKINGJAY  PART 2", "THE MATRIX RELOADED", "THE TWILIGHT SAGA BREAKING DAWN PART 1", "MEET THE FOCKERS", "THE HANGOVER", "GRAVITY", "SING", "MONSTERS UNIVERSITY", "SHREK", "DESPICABLE ME 3", "THE AMAZING SPIDERMAN", "HARRY POTTER AND THE CHAMBER OF SECRETS", "THE INCREDIBLES", "HOW THE GRINCH STOLE CHRISTMAS"];
 
 // Array For Storing Encouragement
-var encouragement = ["I’m Your Huckleberry!", "The Call Me Leerooooy Jenkinnnnns!", "Breaking News: Its Hip To Be Square!", "Party Time! Excellent!", " We Should Make A sandwich because I’m cheesy and your on a Roll.", "I'm Better At Chess", "Here's Looking At You, Kid.", "Show Me The Money!", "I'll Have What She's Having.", "I love the smell of binary in the morning."];
+var encouragement = ["I’m Your Huckleberry!", "The Call Me Leerooooy Jenkinnnnns!", "Breaking News: Its Hip To Be Square!", "Party Time! Excellent!", "Lets Make A sandwich because I’m cheesy & your on a Roll.", "I'm Better At Chess", "Here's Looking At You, Kid.", "Show Me The Money!", "I'll Have What She's Having.", "I love the smell of binary in the morning."];
 var randomEncouragement = "";
 
 // Array For Storing Jeers
@@ -72,6 +72,7 @@ var randomCheerSound = function  () {
     console.log("Cheer Luck Factor Was: " + luck);
     if (luck === 1){
         sound.pause();
+        document.getElementById("startSound").pause();
         var i = Math.floor(Math.random() * 10) + 1;
         console.log("Cheer random number is: " + i);
         switch (i) {
@@ -103,10 +104,10 @@ var randomCheerSound = function  () {
                 sound.setAttribute("src", "./assets/sound/cheers/Sweet.mp3");
                 break;
             case 10:
-                sound.setAttribute("src", "../sound/cheers/youcandoit.mp3");
+                sound.setAttribute("src", "./assets/sound/cheers/youcandoit.mp3");
                 break;
             case 11:
-                sound.setAttribute("src", "../sound/cheers/important.mp3");
+                sound.setAttribute("src", "./assets/sound/cheers/important.mp3");
                 break;
         }
     sound.play();
@@ -119,6 +120,7 @@ var randomJeerSound = function  () {
     console.log("Jeer Luck Factor Was: " + luck);
     if (luck === 1 && guesses > 1){
         sound.pause();
+        document.getElementById("startSound").pause();
         var i = Math.floor(Math.random() * 13) + 1;
         console.log("Jeer random number is: " + i);
         switch (i) {
@@ -182,6 +184,7 @@ function startGame(){
     startButton.style.visibility = "hidden"; 
     messageHTML.textContent = "This Is A Top 100 Movie.  EZ PZ Right?";
     image.style.backgroundImage = "url('./assets/images/circuit2.jpeg')";
+    document.getElementById("startSound").play();
 
     // Computer Randomly Picks Word
     var wordPick = movies[Math.floor(Math.random() * 100)];

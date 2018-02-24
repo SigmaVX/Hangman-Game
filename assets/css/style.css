@@ -1,22 +1,21 @@
-
-footer {
-    background-color: #333333;
-    color: #ffffff;
-    border-top: 3px solid #5e3bdd;
-}
-
 a {
     color: #5e3bdd;
 }
 
+footer {
+    background-color: #211A1D;
+    color: #CAD5CA;
+    border-top: 3px solid #5e3bdd;
+}
+
 .bigbox{
-    padding-top: 8%;
+    padding-top: 12%;
 }
 
 .btn {
-    border: 2px solid black;
-    background-color: gold;
-    color: black;
+    border: 2px solid #533BDD;
+    background-color: #CAD5CA;
+    color: #211A1D;
     font-weight: 500;
     width: 33%;
     height: 50px;
@@ -26,10 +25,17 @@ a {
 }
 
 .btn:hover {
-    border: 2px solid #333333;
+    border: 2px solid #211A1D;
     background-color:#5e3bdd;
-    color: white;
+    color: #CAD5CA;
     font-weight: 600;
+}
+
+.letter-button {
+    background-color: #5e3bdd;
+    color: #CAD5CA;
+    font-size: 25px;
+    border: 1px solid #5e3b99;
 }
 
 .metrics{
@@ -37,19 +43,35 @@ a {
 }
 
 .jumbotron {
-    opacity: .85;
+    opacity: .90;
     border-radius: 15px;
     padding: 20px;
+    min-height: 262px;
 }
 
 #background {
-    background-color: #222222;
+    background-color: #211A1D;
     background-image: url("../images/circuit2.jpeg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: 100%;  
     min-height: 100vh;
     margin-bottom:-33px; 
-  }
+}
+ 
+.infobox + .tooltip > .tooltip-inner {
+    background-color: #CAD5CA; 
+    color: #211A1D; 
+    border: 1px solid #533BDD; 
+    padding: 15px;
+    font-size: 20px;
+}
+
+#maskedWord {
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 10px;
+}
 
 #message {
     text-transform: uppercase;
@@ -58,13 +80,7 @@ a {
 
 #word {
     text-transform: capitalize;
-    color: #333333;
-}
-
-#maskedWord {
-    font-size: 40px;
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 10px;
+    color: #211A1D;
 }
 
 #wrongLetters {
@@ -86,16 +102,21 @@ a {
     .jumbotron {
         width: 94%;
         margin: 0 auto;
-        min-height: 300px;
         padding-bottom: 20px;
         opacity: 1;
     }
 
     #background {       
-    background-repeat: repeat;
-    min-height:80vh;
-    margin-bottom:0px;
-}
+        background-image: url("../images/circuit2.jpeg");
+        background-repeat: repeat;
+        min-height:80vh;
+        margin-bottom:0px;
+    }
+
+    #buttons{
+        display: flex;
+    }
+
     #message, #word {
         font-size: 20px;
     }

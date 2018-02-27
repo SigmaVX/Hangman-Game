@@ -58,13 +58,22 @@ footer {
     min-height: 100vh;
     margin-bottom:-33px; 
 }
- 
-.infobox + .tooltip > .tooltip-inner {
-    background-color: #CAD5CA; 
-    color: #211A1D; 
-    border: 1px solid #533BDD; 
+
+/* To remove the .9 default opacity in the BS Tooltip */
+.tooltip{
+    opacity: 1 !important;
+}
+
+/* Note: must add the "data-toggle-class" property in tag to select */
+.tooltip > .tooltip-inner {
+    background-color: #533BDD;
+    color: #ffffff; 
+    border: 1px solid #333333;
+    text-align: center; 
     padding: 15px;
-    font-size: 20px;
+    font-size: 16px;
+    max-width: 350px;
+   
 }
 
 #maskedWord {
